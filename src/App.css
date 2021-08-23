@@ -1,38 +1,188 @@
-.App {
-  text-align: center;
+body {
+	padding: 20px;
+	background-color: #333;
+	color: ivory;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav {
+	margin: 0;
+	padding: 0;
+	display: flex;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+nav ul {
+	display: flex;
+	margin: 0;
+	padding: 0;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: rgb(19, 19, 18);
+}
+
+nav ul li:nth-of-type(1):after {
+	content: " |";
+	opacity: 0.3;
+}
+
+nav ul li {
+	list-style: none;
+	margin-left: 5px;
+}
+
+ul.list li {
+	/* list-style: disc; */
+}
+
+.iconMusic:hover {
+	color: blue;
+
+}
+
+.iconMusic {
+	color: red;
+	/* width: 50px;
+	height: 50px; */
+	stroke: blue;
+	filter: drop-shadow(5px 5px 10px yellow);
+}
+
+/* New Style von Gamze */
+.main {
+	font-family: "Poppins", sans-serif;
+	min-height: 100vh;
+	background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.glass {
+	background: white;
+	min-height: 80vh;
+	width: 60%;
+	background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+	border-radius: 2rem;
+	z-index: 2;
+	backdrop-filter: blur(2rem);
+	display: flex;
+}
+.circle1,
+.circle2 {
+  background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.3)
+  );
+  height: 20rem;
+  width: 20rem;
+  position: absolute;
+  border-radius: 50%;
+}
+.circle1 {
+	top: 5%;
+	right: 15%;
+}
+.circle2 {
+	bottom: 5%;
+	left: 10%;
+}
+.inputBox{
+	background: linear-gradient(
+		to right bottom,
+		rgba(255, 255, 255, 0.7),
+		rgba(255, 255, 255, 0.3)
+	  );
+	  border: none;
+	  width: 50%;
+	  padding: 0.5rem;
+	  border-radius: 2rem;
+}
+p{
+	color: #426696;
+}
+.list{
+	color: #426696;
+}
+.title{
+	color: #426696;
+ }
+ .dashboard {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	text-align: center;
+	background: linear-gradient(
+	  to right bottom,
+	  rgba(255, 255, 255, 0.7),
+	  rgba(255, 255, 255, 0.3)
+	);
+	border-radius: 2rem;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .links{
+	margin: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
   }
-  to {
-    transform: rotate(360deg);
-  }
+/* smartphone view */
+
+@media (max-width: 577px) {
+	h1.title {
+		font-size: 1.6rem;
+		color: #426696;
+	}
+	input.inputBox {
+		width: 100%;
+		font-size: 1.5em;
+	}
+	.iconRecord {
+		display: none;
+	}
+	div.wrapper {
+		padding: 20px;
+		border: 2px solid #666;
+		margin: 0 0 8px 0;
+		background-color: #555;
+		box-shadow: 1px 1px 2px #777;
+	}
+	div.wrapper:nth-child(odd) {
+		background-color: #444;
+	}
+}
+
+/* computer/table view */
+
+@media (min-width: 578px) {
+	.wrapper {
+		display: flex;
+	}
+	.iconRecord:hover {
+		animation: record-spin infinite 1s linear;
+		color: yellow;
+	}
+	.iconRecord svg {
+		width: 20px;
+		height: 20px;
+	}
+	.iconRecord {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 2px 5px 5px 0;
+		animation: record-spin infinite 10s linear;
+		color: #888;
+	}
+	@keyframes record-spin {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(360deg);
+		}
+	}
 }
